@@ -3,7 +3,10 @@ start-db:
 	docker run -d -it -e POSTGRES_PASSWORD=postgres -p 5432:5432 \
 	--name til-db postgres:12.0-alpine
 
-start-dev: start-db
+start-cleandev: start-db
 	sleep 10 && mix ecto.create
 	mix ecto.migrate
+	mix phx.server
+
+start-dev:
 	mix phx.server

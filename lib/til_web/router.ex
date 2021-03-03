@@ -1,5 +1,6 @@
 defmodule TilWeb.Router do
   use TilWeb, :router
+  use Pow.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -36,6 +37,8 @@ defmodule TilWeb.Router do
 
     scope "/" do
       pipe_through :browser
+
+      pow_routes()
       live_dashboard "/dashboard", metrics: TilWeb.Telemetry
     end
   end
