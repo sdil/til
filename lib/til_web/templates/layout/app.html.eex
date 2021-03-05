@@ -14,6 +14,7 @@
         <nav role="navigation">
           <ul>
             <li><a href="/session/new">Sign In</a></li>
+            <li><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></li>
           </ul>
         </nav>
         <a href="/" class="phx-logo">
