@@ -14,6 +14,13 @@ defmodule TilWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/" do
+    pipe_through :browser
+
+    pow_routes()
+  end
+
+
   scope "/", TilWeb do
     pipe_through :browser
 
@@ -38,7 +45,6 @@ defmodule TilWeb.Router do
     scope "/" do
       pipe_through :browser
 
-      pow_routes()
       live_dashboard "/dashboard", metrics: TilWeb.Telemetry
     end
   end
