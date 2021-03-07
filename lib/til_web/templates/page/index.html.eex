@@ -8,6 +8,7 @@
     <h2>New TIL</h2>
     <ul>
       <li>
+      <%=  %>
         <a href="https://hexdocs.pm/phoenix/overview.html">Create Phoenix Makefile</a>
       </li>
     </ul>

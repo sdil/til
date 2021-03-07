@@ -1,0 +1,28 @@
+<h1>Listing Lesson</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for lesson <- @lesson do %>
+    <tr>
+      <td><%= lesson.title %></td>
+      <td><%= lesson.content %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.lesson_path(@conn, :show, lesson) %></span>
+        <span><%= link "Edit", to: Routes.lesson_path(@conn, :edit, lesson) %></span>
+        <span><%= link "Delete", to: Routes.lesson_path(@conn, :delete, lesson), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Lesson", to: Routes.lesson_path(@conn, :new) %></span>

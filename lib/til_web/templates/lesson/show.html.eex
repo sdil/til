@@ -1,0 +1,18 @@
+<h1>Show Lesson</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @lesson.title %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @lesson.content %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.lesson_path(@conn, :edit, @lesson) %></span>
+<span><%= link "Back", to: Routes.lesson_path(@conn, :index) %></span>

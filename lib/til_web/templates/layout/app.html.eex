@@ -20,6 +20,7 @@
         <a href="/" class="phx-logo">
           Today I Learned
         </a>
+        <a href="/lesson">Lesson</a>
       </section>
     </header>
     <main role="main" class="container">
